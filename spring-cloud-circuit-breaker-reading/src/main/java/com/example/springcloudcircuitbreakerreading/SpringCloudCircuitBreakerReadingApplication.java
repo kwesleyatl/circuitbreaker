@@ -17,13 +17,9 @@ public class SpringCloudCircuitBreakerReadingApplication {
 	private BookService bookService;
 
 	@RequestMapping("/to-read")
-	public Mono<String> toRead() {
-		return bookService.getList();
-	}
-
-	@RequestMapping("/cb-read")
-	public Mono<String> cbRead() {
-		return bookService.cbReadingList();
+	public String toRead() {
+		String ans =  bookService.getList();
+		return ans;
 	}
 
 	public static void main(String[] args) {
